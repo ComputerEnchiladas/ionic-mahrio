@@ -17,7 +17,7 @@
       <ion-badge color="danger" item-end>{{red}}</ion-badge>
     </ion-list-header>
     <ion-item>
-      <ion-range min="0" max="255" [(ngModel)]="red" color="danger">
+      <ion-range min="0" max="255" [(ngModel)]="red" color="danger" debounce="200" (ionChange)="onSliderChanged('red', red)">
         <ion-icon range-left small name="sunny"></ion-icon>
         <ion-icon range-right name="sunny"></ion-icon>
       </ion-range>
@@ -29,7 +29,7 @@
       <ion-badge color="secondary" item-end>{{green}}</ion-badge>
     </ion-list-header>
     <ion-item>
-      <ion-range min="0" max="255" [(ngModel)]="green" color="secondary">
+      <ion-range min="0" max="255" [(ngModel)]="green" color="secondary" debounce="200" (ionChange)="onSliderChanged('green', green)">
         <ion-icon range-left small name="sunny"></ion-icon>
         <ion-icon range-right name="sunny"></ion-icon>
       </ion-range>
@@ -41,7 +41,7 @@
       <ion-badge item-end>{{blue}}</ion-badge>
     </ion-list-header>
     <ion-item>
-      <ion-range min="0" max="255" [(ngModel)]="blue" color="primary">
+      <ion-range min="0" max="255" [(ngModel)]="blue" color="primary" debounce="200" (ionChange)="onSliderChanged('blue', blue)">
         <ion-icon range-left small name="sunny"></ion-icon>
         <ion-icon range-right name="sunny"></ion-icon>
       </ion-range>
