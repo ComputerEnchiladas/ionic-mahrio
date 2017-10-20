@@ -10,4 +10,16 @@ require('mahrio').runServer( process.env, __dirname)
         rep.view('index');
       }
     })
+
+    server.route({
+      method: 'POST',
+      path: '/color',
+      handler: function(req, rep){
+        console.log('rgb('+req.payload.red+','+req.payload.green+','+req.payload.blue+')');
+        rep();
+      },
+      config: {
+        cors: true
+      }
+    })
   });
