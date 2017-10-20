@@ -4,8 +4,17 @@
   <title>RGB Output</title>
 </head>
 <body style="margin: 0">
-  <div style="width: 100%; height: 100%;" id="rgb-output">
+  <div style="width: 100%; height: 100vh;" id="rgb-output">
 
   </div>
 </body>
+<script src="/socket-io-client" type="text/javascript"></script>
+<script type="text/javascript">
+  var div = document.getElementById('rgb-output');
+  var socket = new io();
+  socket.on('color', function(obj){
+    console.log( obj );
+    div.style.backgroundColor = 'rgb('+obj.red+','+obj.green+','+obj.blue+')';
+  })
+</script>
 </html>
