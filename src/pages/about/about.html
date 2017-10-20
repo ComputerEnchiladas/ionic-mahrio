@@ -7,5 +7,44 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-list>
+    <div style="width: 100%; height: 200px;" [ngStyle]="{'background-color': getRGB() }">
+    </div>
+  </ion-list>
+  <ion-list>
+    <ion-list-header color="danger">
+      RED
+      <ion-badge color="danger" item-end>{{red}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="255" [(ngModel)]="red" color="danger">
+        <ion-icon range-left small name="sunny"></ion-icon>
+        <ion-icon range-right name="sunny"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header color="secondary">
+      GREEN
+      <ion-badge color="secondary" item-end>{{green}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="255" [(ngModel)]="green" color="secondary">
+        <ion-icon range-left small name="sunny"></ion-icon>
+        <ion-icon range-right name="sunny"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header style="color: #fff;background-color: #488aff;">
+      BLUE
+      <ion-badge item-end>{{blue}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="255" [(ngModel)]="blue" color="primary">
+        <ion-icon range-left small name="sunny"></ion-icon>
+        <ion-icon range-right name="sunny"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
 </ion-content>
