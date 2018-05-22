@@ -1,5 +1,6 @@
 process.env.NODE_URL='192.168.0.6';
 process.env.NODE_PUBLIC_PATH='./';
+process.env.NODE_ENV = "development"
 
 
 var five = require('johnny-five');
